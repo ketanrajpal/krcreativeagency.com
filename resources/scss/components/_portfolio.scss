@@ -1,0 +1,221 @@
+section#portfolio {
+  div.heading {
+    h3 {
+      font-weight: map-get($font-weight, light);
+      color: map-get($color, 1);
+      font-weight: 300;
+    }
+    p {
+      font-weight: map-get($font-weight, light);
+      color: #ffffff;
+    }
+    @media (min-width: 1280px) {
+      width: 90%;
+      padding: 100px 0 50px 0;
+      margin: auto;
+      h3 {
+        width: 80%;
+        font-size: 32px;
+        display: block;
+      }
+      p {
+        display: block;
+        width: 45%;
+        font-size: 17px;
+        line-height: 200%;
+      }
+    }
+    @media (min-width: 980px) and (max-width: 1279px) {
+    }
+    @media (min-width: 736px) and (max-width: 979px) {
+    }
+    @media (min-width: 480px) and (max-width: 735px) {
+    }
+    @media (max-width: 479px) {
+    }
+  }
+}
+
+section#portfolio {
+  div.container {
+    article {
+      background-color: #ededed;
+      border-radius: 5px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr 20px;
+      box-shadow: 0px 0px 5px #000000;
+      div.control {
+        padding: 10px 15px;
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        span {
+          color: map-get($color, 3);
+        }
+        div.right {
+          text-align: right;
+        }
+        div.center {
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: rgba(0, 0, 0, 0.5);
+        }
+        div.left {
+          span {
+            margin-right: 3px;
+          }
+        }
+      }
+      div.content {
+        position: relative;
+        background-color: #ffffff;
+        overflow: hidden;
+        img {
+          width: 100%;
+        }
+        div.cover {
+          position: absolute;
+          top: 0px;
+          background-color: #ff684de3;
+          width: 100%;
+          height: 100%;
+          display: none;
+          grid-template-rows: 1fr 1fr 1fr;
+          text-align: center;
+          align-items: center;
+          h1 {
+            font-size: 25px;
+            color: #ffffff;
+            width: 75%;
+            margin: auto;
+            line-height: 150%;
+            font-weight: map-get($font-weight, light);
+          }
+          a {
+            display: inline-block;
+            padding: 10px 15px;
+            color: #ffffff;
+            font-size: 13px;
+            letter-spacing: 1px;
+            font-weight: map-get($font-weight, regular);
+            text-transform: uppercase;
+            border: 1px solid #ffffff;
+            transition: all ease 0.5s;
+            &:hover {
+              background-color: #ffffff;
+              color: map-get($color, 3);
+            }
+          }
+          p {
+            color: #ffffff;
+            font-size: 11px;
+            span {
+              color: #000000;
+            }
+          }
+        }
+        &:hover {
+          div.cover {
+            display: grid;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    div.container {
+      width: 90%;
+      margin: auto;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr 1fr;
+      article {
+        div.control {
+          font-size: 13px;
+          div.center {
+            font-size: 10px;
+            line-height: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 980px) and (max-width: 1279px) {
+    div.container {
+      width: 950px;
+      margin: auto;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr 1fr;
+      article {
+        div.control {
+          font-size: 13px;
+          div.center {
+            font-size: 10px;
+            line-height: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 736px) and (max-width: 979px) {
+    div.container {
+      width: 700px;
+      margin: auto;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr 1fr;
+      article {
+        div.control {
+          font-size: 8px;
+          line-height: 13px;
+          div.center {
+            font-size: 6px;
+            line-height: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 735px) {
+    div.container {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr;
+      article {
+        div.control {
+          font-size: 13px;
+          div.center {
+            font-size: 10px;
+            line-height: 13px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 479px) {
+    div.container {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: 1fr;
+      article {
+        div.control {
+          font-size: 9px;
+          div.center {
+            font-size: 7px;
+            line-height: 13px;
+          }
+        }
+      }
+    }
+  }
+}

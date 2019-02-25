@@ -1,0 +1,145 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  &.top {
+    background: map-get($color, 3);
+    div {
+      padding: 10px 0 !important;
+      a.logo {
+        width: 150px;
+      }
+    }
+  }
+  div {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 200px 1fr 290px;
+    nav {
+      align-self: center;
+      &:nth-child(2) {
+        text-align: center;
+        a {
+          &::after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 2px;
+            background: map-get($color, 1);
+            transition: width 0.3s;
+            margin-top: 8px;
+          }
+          &:hover::after,
+          &.active::after {
+            width: 100%;
+          }
+        }
+      }
+      &:nth-child(3) {
+        text-align: right;
+      }
+      a {
+        font-weight: map-get($font-weight, regular);
+        display: inline-block;
+        color: #ffffff;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0 25px;
+        padding: 10px 0 1px 0;
+        &.button {
+          background-color: transparent;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          display: inline-block;
+          padding: 10px 18px 9px 18px;
+          border-radius: 4px;
+          transition: all 500ms ease;
+          margin: 0;
+          &:first-child {
+            margin-right: 20px;
+          }
+          i {
+            margin-right: 8px;
+            opacity: 0.5;
+          }
+          &:hover {
+            background-color: map-get($color, 1);
+            border: 2px solid map-get($color, 3);
+            i {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+
+    @media (min-width: 1280px) {
+      width: 90%;
+      padding: 3% 0;
+    }
+
+    @media (min-width: 980px) and (max-width: 1279px) {
+      width: 90%;
+      padding: 4% 0;
+      grid-template-columns: 200px 1fr;
+      nav {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: 736px) and (max-width: 979px) {
+      width: 90%;
+      padding: 5% 0;
+      grid-template-columns: 200px 1fr;
+      nav {
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+
+    @media (min-width: 480px) and (max-width: 735px) {
+      width: 90%;
+      padding: 5% 0;
+      grid-template-columns: 200px 1fr;
+      nav {
+        &:nth-child(2) {
+          display: none;
+        }
+        a {
+          &.button {
+            margin: 0 !important;
+            width: 90px;
+            text-align: center;
+            &:last-child {
+              margin: 10px !important;
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 479px) {
+      width: 90%;
+      padding: 5% 0;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      header {
+        a.logo {
+          width: 200px;
+          display: block;
+          margin: auto;
+        }
+      }
+      nav {
+        &:nth-child(2) {
+          display: none;
+        }
+        margin-top: 20px;
+        text-align: center !important;
+      }
+    }
+  }
+}

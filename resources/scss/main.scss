@@ -1,0 +1,27 @@
+@import "reset";
+@import "variables";
+@import "animate";
+
+@import url("https://use.fontawesome.com/releases/v5.7.1/css/all.css");
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: $font-family;
+  background: map-get($color, 3);
+  background: -webkit-linear-gradient(-45deg, map-get($color, 2), map-get($color, 3));
+  background: linear-gradient(-45deg, map-get($color, 2), map-get($color, 3));
+  background-attachment: fixed;
+}
+.large-header {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+}
+
+@import "components/header";
+@import "components/about";
+@import "components/portfolio";
