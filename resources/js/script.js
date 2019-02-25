@@ -1,6 +1,7 @@
-$.get("https://api.behance.net/v2/users/ketanrajpal/projects?client_id=3Kb31GGpamNvxsp9PjTaV5TIMGQydJSU", function(
-  data
-) {
+var host = "www.krcreativeagency.com";
+if (host == window.location.host && window.location.protocol != "https:") window.location.protocol = "https";
+
+$.get("./resources/json/data.json", function(data) {
   var content = "";
   var projects = data.projects;
   $.each(projects, function(index, element) {
