@@ -20,7 +20,7 @@ section#about {
       a {
         color: #ffffff;
         position: relative;
-        z-index: 9999;
+        z-index: 999;
 
         @each $color in $social {
           $key: nth($color, 1);
@@ -56,14 +56,14 @@ section#about {
       width: 90%;
       h1 {
         width: 80%;
-        font-size: 32px;
+        font-size: 31px;
         line-height: 150%;
         display: block;
       }
       h2 {
         display: block;
         width: 85%;
-        font-size: 17px;
+        font-size: 16px;
         line-height: 200%;
       }
       p {
@@ -73,23 +73,80 @@ section#about {
     }
 
     @media (min-width: 980px) and (max-width: 1279px) {
+      width: 90%;
+      h1 {
+        width: 85%;
+        font-size: 27px;
+        line-height: 150%;
+        display: block;
+      }
+      h2 {
+        display: block;
+        width: 90%;
+        font-size: 15px;
+        line-height: 200%;
+      }
+      p {
+        margin-top: 25px;
+        font-size: 15px;
+      }
     }
 
     @media (min-width: 736px) and (max-width: 979px) {
+      width: 90%;
       h1 {
-        font-size: 30px;
-        line-height: 170%;
+        width: 90%;
+        font-size: 26px;
+        line-height: 150%;
+        display: block;
       }
       h2 {
-        font-size: 14px;
+        display: block;
+        width: 95%;
+        font-size: 15px;
         line-height: 200%;
+      }
+      p {
+        margin-top: 25px;
+        font-size: 15px;
       }
     }
 
     @media (min-width: 480px) and (max-width: 735px) {
+      width: 90%;
+      h1 {
+        width: 90%;
+        font-size: 23px;
+        line-height: 150%;
+        display: block;
+      }
+      h2 {
+        display: block;
+        width: 95%;
+        font-size: 13px;
+        line-height: 200%;
+      }
+      p {
+        margin-top: 25px;
+        font-size: 13px;
+      }
     }
 
     @media (max-width: 479px) {
+      width: 90%;
+      h1 {
+        width: 80%;
+        font-size: 25px;
+        line-height: 150%;
+        display: block;
+      }
+      h2 {
+        display: none;
+      }
+      p {
+        margin-top: 25px;
+        font-size: 20px;
+      }
     }
   }
 }

@@ -1,42 +1,4 @@
 section#portfolio {
-  div.heading {
-    h3 {
-      font-weight: map-get($font-weight, light);
-      color: map-get($color, 1);
-      font-weight: 300;
-    }
-    p {
-      font-weight: map-get($font-weight, light);
-      color: #ffffff;
-    }
-    @media (min-width: 1280px) {
-      width: 90%;
-      padding: 100px 0 50px 0;
-      margin: auto;
-      h3 {
-        width: 80%;
-        font-size: 32px;
-        display: block;
-      }
-      p {
-        display: block;
-        width: 45%;
-        font-size: 17px;
-        line-height: 200%;
-      }
-    }
-    @media (min-width: 980px) and (max-width: 1279px) {
-    }
-    @media (min-width: 736px) and (max-width: 979px) {
-    }
-    @media (min-width: 480px) and (max-width: 735px) {
-    }
-    @media (max-width: 479px) {
-    }
-  }
-}
-
-section#portfolio {
   div.container {
     article {
       background-color: #ededed;
@@ -62,6 +24,7 @@ section#portfolio {
           color: rgba(0, 0, 0, 0.5);
         }
         div.left {
+          letter-spacing: 0 !important;
           span {
             margin-right: 3px;
           }
@@ -144,10 +107,10 @@ section#portfolio {
 
   @media (min-width: 980px) and (max-width: 1279px) {
     div.container {
-      width: 950px;
+      width: 90%;
       margin: auto;
       display: grid;
-      grid-gap: 50px;
+      grid-gap: 20px;
       grid-template-columns: 1fr 1fr;
       article {
         div.control {
@@ -163,10 +126,10 @@ section#portfolio {
 
   @media (min-width: 736px) and (max-width: 979px) {
     div.container {
-      width: 700px;
+      width: 90%;
       margin: auto;
       display: grid;
-      grid-gap: 50px;
+      grid-gap: 20px;
       grid-template-columns: 1fr 1fr;
       article {
         div.control {
@@ -183,7 +146,7 @@ section#portfolio {
 
   @media (min-width: 480px) and (max-width: 735px) {
     div.container {
-      width: 80%;
+      width: 90%;
       margin: auto;
       display: grid;
       grid-gap: 50px;
@@ -202,7 +165,7 @@ section#portfolio {
 
   @media (max-width: 479px) {
     div.container {
-      width: 80%;
+      width: 90%;
       margin: auto;
       display: grid;
       grid-gap: 50px;

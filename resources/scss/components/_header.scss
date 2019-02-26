@@ -4,10 +4,39 @@ header {
   z-index: 9999;
   &.top {
     background: map-get($color, 3);
-    div {
-      padding: 10px 0 !important;
-      a.logo {
-        width: 150px;
+    box-shadow: 0 0 5px map-get($color, 2);
+    @media (min-width: 1280px) {
+      div {
+        padding: 1% 0 !important;
+        a.logo {
+          width: 150px;
+        }
+      }
+    }
+    @media (min-width: 980px) and (max-width: 1279px) {
+      div {
+        padding: 1% 0 !important;
+        a.logo {
+          width: 150px;
+        }
+      }
+    }
+    @media (min-width: 736px) and (max-width: 979px) {
+      div {
+        padding: 2% 0 !important;
+      }
+    }
+    @media (min-width: 480px) and (max-width: 735px) {
+      div {
+        padding: 5% 0 !important;
+      }
+    }
+    @media (max-width: 479px) {
+      div {
+        padding: 4% 0;
+        a.logo {
+          width: 150px;
+        }
       }
     }
   }
@@ -28,6 +57,9 @@ header {
             background: map-get($color, 1);
             transition: width 0.3s;
             margin-top: 8px;
+            img {
+              width: 100%;
+            }
           }
           &:hover::after,
           &.active::after {
@@ -76,15 +108,26 @@ header {
     @media (min-width: 1280px) {
       width: 90%;
       padding: 3% 0;
+      &.top {
+        padding: 10px 0 !important;
+        background: map-get($color, 3);
+        div {
+          a.logo {
+            width: 150px;
+          }
+        }
+      }
     }
 
     @media (min-width: 980px) and (max-width: 1279px) {
       width: 90%;
       padding: 4% 0;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 175px auto 280px;
       nav {
         &:nth-child(2) {
-          display: none;
+          a {
+            margin: 0 15px;
+          }
         }
       }
     }
@@ -102,7 +145,7 @@ header {
 
     @media (min-width: 480px) and (max-width: 735px) {
       width: 90%;
-      padding: 5% 0;
+      padding: 6% 0;
       grid-template-columns: 200px 1fr;
       nav {
         &:nth-child(2) {
@@ -114,7 +157,7 @@ header {
             width: 90px;
             text-align: center;
             &:last-child {
-              margin: 10px !important;
+              margin-top: 10px !important;
             }
           }
         }
@@ -123,15 +166,13 @@ header {
 
     @media (max-width: 479px) {
       width: 90%;
-      padding: 5% 0;
       grid-template-columns: 1fr;
       grid-template-rows: auto auto;
-      header {
-        a.logo {
-          width: 200px;
-          display: block;
-          margin: auto;
-        }
+      padding: 6% 0;
+      a.logo {
+        width: 150px;
+        display: block;
+        margin: auto;
       }
       nav {
         &:nth-child(2) {

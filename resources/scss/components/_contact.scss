@@ -1,0 +1,124 @@
+section#contact {
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  form {
+    width: 90%;
+    margin: auto;
+    display: block;
+    position: relative;
+    z-index: 999;
+    fieldset {
+      border: none;
+      padding: 0;
+      margin: 0;
+      input,
+      textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        letter-spacing: 1px;
+        display: block;
+        border: 0;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, 0.1);
+        border: 1px solid map-get($color, 2);
+        color: #ffffff;
+        transition: all 1s ease;
+        &:focus {
+          border: 1px solid map-get($color, 1);
+        }
+      }
+      input[type="submit"] {
+        background: map-get($color, 3);
+        cursor: pointer;
+        &:hover {
+          background-color: map-get($color, 1);
+        }
+      }
+      textarea {
+        height: 150px;
+      }
+    }
+  }
+  @media (min-width: 1280px) {
+    form {
+      grid-template-columns: 1fr 1fr 1fr;
+      display: grid;
+      grid-gap: 20px;
+      fieldset {
+        &:nth-child(4) {
+          grid-column: 1/4;
+        }
+        &:nth-child(5) {
+          grid-column: 3;
+        }
+      }
+    }
+  }
+  @media (min-width: 980px) and (max-width: 1279px) {
+    form {
+      grid-template-columns: 1fr 1fr 1fr;
+      display: grid;
+      grid-gap: 20px;
+      fieldset {
+        &:nth-child(4) {
+          grid-column: 1/4;
+        }
+        &:nth-child(5) {
+          grid-column: 3;
+        }
+      }
+    }
+  }
+  @media (min-width: 736px) and (max-width: 979px) {
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      fieldset {
+        input,
+        textarea {
+          margin: 5px 0;
+        }
+        &:nth-child(4) {
+          grid-column: 1 / span 2;
+          grid-row: 3;
+        }
+        &:nth-child(5) {
+          grid-column: 1;
+          grid-row: 4;
+        }
+      }
+    }
+  }
+  @media (min-width: 480px) and (max-width: 735px) {
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 10px;
+      fieldset {
+        input,
+        textarea {
+          margin: 5px 0;
+        }
+        &:nth-child(4) {
+          grid-column: 1 / span 2;
+          grid-row: 3;
+        }
+        &:nth-child(5) {
+          grid-column: 1;
+          grid-row: 4;
+        }
+      }
+    }
+  }
+  @media (max-width: 479px) {
+    form {
+      input,
+      textarea {
+        margin: 5px 0;
+      }
+    }
+  }
+}

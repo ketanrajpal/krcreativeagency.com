@@ -13,6 +13,7 @@ body {
   background: -webkit-linear-gradient(-45deg, map-get($color, 2), map-get($color, 3));
   background: linear-gradient(-45deg, map-get($color, 2), map-get($color, 3));
   background-attachment: fixed;
+  letter-spacing: 1px;
 }
 .large-header {
   position: fixed;
@@ -22,6 +23,95 @@ body {
   background-position: center center;
 }
 
+div.heading {
+  h3 {
+    font-weight: map-get($font-weight, light);
+    color: map-get($color, 1);
+    font-weight: 300;
+    line-height: 200%;
+    margin-top: 10px;
+    line-height: 200%;
+    margin-top: 20px;
+  }
+  p {
+    font-weight: map-get($font-weight, light);
+    color: #ffffff;
+    line-height: 200%;
+    margin-top: 20px;
+  }
+  @media (min-width: 1280px) {
+    width: 90%;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    h3 {
+      width: 80%;
+      font-size: 32px;
+      display: block;
+    }
+    p {
+      display: block;
+      width: 55%;
+      font-size: 17px;
+    }
+  }
+  @media (min-width: 980px) and (max-width: 1279px) {
+    width: 90%;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    h3 {
+      width: 80%;
+      font-size: 32px;
+      display: block;
+    }
+    p {
+      display: block;
+      width: 55%;
+      font-size: 17px;
+    }
+  }
+  @media (min-width: 736px) and (max-width: 979px) {
+    width: 90%;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    h3 {
+      font-size: 28px;
+      display: block;
+    }
+    p {
+      display: block;
+      font-size: 17px;
+    }
+  }
+  @media (min-width: 480px) and (max-width: 735px) {
+    width: 90%;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    h3 {
+      font-size: 28px;
+      display: block;
+    }
+    p {
+      display: block;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 479px) {
+    width: 90%;
+    padding: 100px 0 50px 0;
+    margin: auto;
+    h3 {
+      font-size: 25px;
+      display: block;
+    }
+    p {
+      display: block;
+      font-size: 14px;
+    }
+  }
+}
+
 @import "components/header";
 @import "components/about";
 @import "components/portfolio";
+@import "components/contact";
+@import "components/footer";
