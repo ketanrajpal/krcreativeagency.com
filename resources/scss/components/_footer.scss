@@ -11,7 +11,7 @@ footer {
       padding-top: 40px;
       color: rgba(255, 255, 255, 0.5);
     }
-    article {
+    section {
       h4 {
         color: map-get($color, 1);
         font-weight: 300;
@@ -44,7 +44,7 @@ footer {
         grid-column: 1/4;
         font-size: 12px;
       }
-      article {
+      section {
         &:first-child {
           grid-column: 1/3;
         }
@@ -71,7 +71,7 @@ footer {
         line-height: 200%;
         grid-column: 1/3;
       }
-      article {
+      section {
         &:nth-child(1) {
           grid-column: 1 / span 2;
         }
@@ -105,7 +105,7 @@ footer {
         font-size: 12px;
         line-height: 200%;
       }
-      article {
+      section {
         h4 {
           font-size: 15px;
           margin-bottom: 10px;
@@ -132,7 +132,7 @@ footer {
         font-size: 10px;
         line-height: 200%;
       }
-      article {
+      section {
         h4 {
           font-size: 15px;
           margin-bottom: 10px;
@@ -159,7 +159,7 @@ footer {
         font-size: 10px;
         line-height: 200%;
       }
-      article {
+      section {
         h4 {
           font-size: 15px;
           margin-bottom: 10px;

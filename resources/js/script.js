@@ -169,7 +169,7 @@ function Circle() {
 
 $(function() {
   var icon = "<span class='fas fa-exclamation-circle'></span> ";
-  $("#contact").submit(function() {
+  $("#contactFrm").submit(function() {
     if ($("#name").val() == "" || $("#email").val() == "" || $("#phone").val() == "" || $("#message").val() == "") {
       $("#validation").html(icon + "All the above fields are required.");
       return false;
