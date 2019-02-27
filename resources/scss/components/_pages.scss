@@ -4,10 +4,21 @@ section.pages {
     width: 90%;
     margin: auto;
     p {
+      margin-bottom: 20px;
       font-size: 14px;
       line-height: 200%;
       color: #ffffff;
       font-weight: map-get($font-weight, lighter);
+      a {
+        color: map-get($color, 1);
+      }
+    }
+    h2 {
+      font-size: 16px;
+      color: map-get($color, 1);
+      line-height: 200%;
+      margin-top: 20px;
+      font-weight: map-get($font-weight, regular);
     }
   }
 }
