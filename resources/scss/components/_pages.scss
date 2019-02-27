@@ -1,0 +1,13 @@
+section.pages {
+  padding: 50px 0;
+  div.content {
+    width: 90%;
+    margin: auto;
+    p {
+      font-size: 14px;
+      line-height: 200%;
+      color: #ffffff;
+      font-weight: map-get($font-weight, lighter);
+    }
+  }
+}

@@ -1,8 +1,4 @@
 section#about {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  align-items: center;
   div {
     margin: auto;
     h1 {
@@ -52,7 +48,13 @@ section#about {
         margin-left: 10px;
       }
     }
-    @media (min-width: 1280px) {
+  }
+  @media (min-width: 1280px) {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    div {
       width: 90%;
       h1 {
         width: 80%;
@@ -71,8 +73,14 @@ section#about {
         font-size: 15px;
       }
     }
+  }
 
-    @media (min-width: 980px) and (max-width: 1279px) {
+  @media (min-width: 980px) and (max-width: 1279px) {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    div {
       width: 90%;
       h1 {
         width: 85%;
@@ -91,8 +99,11 @@ section#about {
         font-size: 15px;
       }
     }
+  }
 
-    @media (min-width: 736px) and (max-width: 979px) {
+  @media (min-width: 736px) and (max-width: 979px) {
+    padding-top: 150px;
+    div {
       width: 90%;
       h1 {
         width: 90%;
@@ -111,8 +122,11 @@ section#about {
         font-size: 15px;
       }
     }
+  }
 
-    @media (min-width: 480px) and (max-width: 735px) {
+  @media (min-width: 480px) and (max-width: 735px) {
+    padding-top: 150px;
+    div {
       width: 90%;
       h1 {
         width: 90%;
@@ -131,8 +145,11 @@ section#about {
         font-size: 13px;
       }
     }
+  }
 
-    @media (max-width: 479px) {
+  @media (max-width: 479px) {
+    padding-top: 200px;
+    div {
       width: 90%;
       h1 {
         width: 80%;
@@ -146,6 +163,9 @@ section#about {
       p {
         margin-top: 25px;
         font-size: 20px;
+        a {
+          margin-left: 3px;
+        }
       }
     }
   }

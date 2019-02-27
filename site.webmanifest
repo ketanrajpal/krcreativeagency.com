@@ -1,14 +1,14 @@
 {
-  "short_name": "",
-  "name": "",
+  "short_name": "KR Creative Agency",
+  "name": "KR Creative Agency",
   "icons": [
     {
-      "src": "icon.png",
+      "src": "./resources/img/krcreativeagency.192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
   ],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "start_url": "/",
+  "background_color": "#141e30",
+  "theme_color": "#ff694d"
 }

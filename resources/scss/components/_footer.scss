@@ -3,7 +3,7 @@ footer {
   div {
     margin: auto;
     position: relative;
-    z-index: 9999;
+    z-index: 99;
     width: 90%;
     padding: 50px 0;
     p {
@@ -129,7 +129,7 @@ footer {
       display: grid;
       grid-template-columns: 1fr;
       p {
-        font-size: 12px;
+        font-size: 10px;
         line-height: 200%;
       }
       article {
@@ -166,7 +166,7 @@ footer {
         }
         ul {
           li {
-            font-size: 10px;
+            font-size: 9px;
             line-height: 20px;
             i {
               margin-right: 5px;

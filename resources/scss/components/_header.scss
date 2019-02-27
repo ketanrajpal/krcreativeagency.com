@@ -28,12 +28,15 @@ header {
     }
     @media (min-width: 480px) and (max-width: 735px) {
       div {
-        padding: 5% 0 !important;
+        padding: 2% 0 !important;
+        a.logo {
+          width: 150px;
+        }
       }
     }
     @media (max-width: 479px) {
       div {
-        padding: 4% 0;
+        padding: 30px 0;
         a.logo {
           width: 150px;
         }

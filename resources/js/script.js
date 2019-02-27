@@ -166,3 +166,22 @@ function Circle() {
     ctx.fill();
   };
 }
+
+$(function() {
+  var icon = "<span class='fas fa-exclamation-circle'></span> ";
+  $("#contact").submit(function() {
+    if ($("#name").val() == "" || $("#email").val() == "" || $("#phone").val() == "" || $("#message").val() == "") {
+      $("#validation").html(icon + "All the above fields are required.");
+      return false;
+    } else {
+      var namePattern = "[A-Za-z ]+";
+      var phonePattern = "[0-9]+";
+      /*
+      if (!namePattern.test($("#name").val())) {
+        $("#validation").html(icon + "Name must contain only alphabets");
+      }
+      */
+      return false;
+    }
+  });
+});
