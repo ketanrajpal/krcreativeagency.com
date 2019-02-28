@@ -221,7 +221,9 @@ $(function() {
           phone: $("#phone").val(),
           host: "krcreativeagency.com",
           message: message.replace(/<[^>]+>/g, ""),
-          timestamp: new Date()
+          timestamp: {
+            created_on: new Date()
+          }
         });
 
         $("#first_name").val(null);
