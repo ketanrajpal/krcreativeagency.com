@@ -219,6 +219,7 @@ $(function() {
           },
           email: $("#email").val(),
           phone: $("#phone").val(),
+          host: "krcreativeagency.com",
           message: message.replace(/<[^>]+>/g, "")
         });
 
