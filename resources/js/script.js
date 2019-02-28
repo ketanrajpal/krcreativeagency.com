@@ -220,7 +220,8 @@ $(function() {
           email: $("#email").val(),
           phone: $("#phone").val(),
           host: "krcreativeagency.com",
-          message: message.replace(/<[^>]+>/g, "")
+          message: message.replace(/<[^>]+>/g, ""),
+          timestamp: new Date()
         });
 
         $("#first_name").val(null);
