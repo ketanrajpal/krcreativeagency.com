@@ -151,15 +151,18 @@
             needs. We’ll take it from there.
           </p>
         </div>
-        <form name="contactFrm" id="contactFrm" autocomplete="off">
+        <form name="contactFrm" id="contactFrm" autocomplete="off" method="POST">
           <fieldset>
-            <input type="text" id="name" name="name" placeholder="* What is your name?" />
+            <input type="text" id="first_name" name="first_name" placeholder="* Your first name" />
           </fieldset>
           <fieldset>
-            <input type="text" id="email" name="email" placeholder="* What is your email address?" />
+            <input type="text" id="last_name" name="last_name" placeholder="* Your last name" />
           </fieldset>
           <fieldset>
-            <input type="text" id="phone" name="phone" placeholder="* What is your phone number?" />
+            <input type="text" id="email" name="email" placeholder="* Your Email address" />
+          </fieldset>
+          <fieldset>
+            <input type="text" id="phone" name="phone" placeholder="* Your phone number" />
           </fieldset>
           <fieldset>
             <textarea id="message" name="message" placeholder="* Please write your requirements here."></textarea>
@@ -220,6 +223,7 @@
 
     <script src="./resources/js/modernizr.min.js"></script>
     <script src="./resources/js/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
     <script src="./resources/js/script.js"></script>
   </body>
 </html>

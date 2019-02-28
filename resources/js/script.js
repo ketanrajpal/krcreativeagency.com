@@ -167,21 +167,71 @@ function Circle() {
   };
 }
 
+var config = {
+  apiKey: "AIzaSyC3RacuCf1RQEI_rVVuHcg4VOHAa_7R5mA",
+  authDomain: "crm-necessity-pro.firebaseapp.com",
+  databaseURL: "https://crm-necessity-pro.firebaseio.com",
+  projectId: "crm-necessity-pro",
+  storageBucket: "crm-necessity-pro.appspot.com",
+  messagingSenderId: "12736628159"
+};
+firebase.initializeApp(config);
+var leadsDb = firebase.firestore();
+
 $(function() {
   var icon = "<span class='fas fa-exclamation-circle'></span> ";
-  $("#contactFrm").submit(function() {
-    if ($("#name").val() == "" || $("#email").val() == "" || $("#phone").val() == "" || $("#message").val() == "") {
+  $("#contactFrm").submit(function(e) {
+    e.preventDefault();
+    if (
+      $("#first_name").val() == "" ||
+      $("#last_name").val() == "" ||
+      $("#email").val() == "" ||
+      $("#phone").val() == "" ||
+      $("#message").val() == ""
+    ) {
       $("#validation").html(icon + "All the above fields are required.");
       return false;
     } else {
-      var namePattern = "[A-Za-z ]+";
-      var phonePattern = "[0-9]+";
-      /*
-      if (!namePattern.test($("#name").val())) {
-        $("#validation").html(icon + "Name must contain only alphabets");
+      var namePattern = /^[A-Za-z ]+/;
+      var phonePattern = /^[0-9 \+]+/;
+      var emailPattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+      if (!namePattern.test($("#first_name").val()) || !namePattern.test($("#last_name").val())) {
+        $("#validation").html(icon + "First and last name must contain only alphabets.");
+      } else if (!emailPattern.test($("#email").val())) {
+        $("#validation").html(icon + "Entered email is not valid.");
+      } else if (!phonePattern.test($("#phone").val())) {
+        $("#validation").html(
+          icon + "Please only use number 0-9, '+' and ' '(space). Entered phone number is not valid."
+        );
+      } else {
+        $("#validation").css({ color: "#5aad5a" });
+        $("#validation").html(
+          '<i class="fas fa-check-circle"></i> ' + "Thank you for your enquiry. We will get back to you."
+        );
+
+        var message = $("#message").val();
+
+        leadsDb.collection("leads").add({
+          name: {
+            first: $("#first_name").val(),
+            last: $("#last_name").val()
+          },
+          email: $("#email").val(),
+          phone: $("#phone").val(),
+          message: message.replace(/<[^>]+>/g, "")
+        });
+
+        $("#first_name").val(null);
+        $("#last_name").val(null);
+        $("#email").val(null);
+        $("#phone").val(null);
+        $("#message").val(null);
+
+        setTimeout(function() {
+          $("#validation").html("");
+        }, 5000);
       }
-      */
-      return false;
     }
   });
 });
