@@ -212,7 +212,7 @@ $(function() {
 
         var message = $("#message").val();
 
-        leadsDb.collection("leads").add({
+        leadsDb.collection("lead").add({
           name: {
             first: $("#first_name").val(),
             last: $("#last_name").val()
