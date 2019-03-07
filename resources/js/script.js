@@ -1,6 +1,6 @@
 var host = "www.krcreativeagency.com";
 if (host == window.location.host && window.location.protocol != "https:") window.location.protocol = "https";
-
+/*
 $.get("./resources/json/data.json", function(data) {
   var content = "";
   var projects = data.projects;
@@ -29,7 +29,7 @@ $.get("./resources/json/data.json", function(data) {
     content += "</article>";
   });
   $(".container").append(content);
-});
+});*/
 
 window.onscroll = function() {
   if (window.pageYOffset > 100) {
