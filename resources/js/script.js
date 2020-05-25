@@ -1,5 +1,6 @@
 var host = "www.krcreativeagency.com";
-if (host == window.location.host && window.location.protocol != "https:") window.location.protocol = "https";
+if (host == window.location.host && window.location.protocol != "https:")
+  window.location.protocol = "https";
 /*
 $.get("./resources/json/data.json", function(data) {
   var content = "";
@@ -31,7 +32,7 @@ $.get("./resources/json/data.json", function(data) {
   $(".container").append(content);
 });*/
 
-window.onscroll = function() {
+window.onscroll = function () {
   if (window.pageYOffset > 100) {
     $("header").addClass("top");
   } else {
@@ -40,18 +41,18 @@ window.onscroll = function() {
   onScroll();
 };
 
-$("#navigation a").click(function() {
+$("#navigation a").click(function () {
   var target = this.hash;
   $target = $(target);
   $("html, body")
     .stop()
     .animate(
       {
-        scrollTop: $target.offset().top + 2
+        scrollTop: $target.offset().top + 2,
       },
       500,
       "swing",
-      function() {
+      function () {
         window.location.hash = target;
         $(document).on("scroll", onScroll);
       }
@@ -60,7 +61,7 @@ $("#navigation a").click(function() {
 
 function onScroll() {
   var scrollPosition = $(document).scrollTop();
-  $("#navigation a").each(function() {
+  $("#navigation a").each(function () {
     var currentLink = $(this);
     var refElement = $(currentLink.attr("href"));
     if (
@@ -141,7 +142,7 @@ function Circle() {
   var _this = this;
 
   // constructor
-  (function() {
+  (function () {
     _this.pos = {};
     init();
   })();
@@ -154,7 +155,7 @@ function Circle() {
     _this.velocity = Math.random();
   }
 
-  this.draw = function() {
+  this.draw = function () {
     if (_this.alpha <= 0) {
       init();
     }
@@ -167,20 +168,9 @@ function Circle() {
   };
 }
 
-var config = {
-  apiKey: "AIzaSyC3RacuCf1RQEI_rVVuHcg4VOHAa_7R5mA",
-  authDomain: "crm-necessity-pro.firebaseapp.com",
-  databaseURL: "https://crm-necessity-pro.firebaseio.com",
-  projectId: "crm-necessity-pro",
-  storageBucket: "crm-necessity-pro.appspot.com",
-  messagingSenderId: "12736628159"
-};
-firebase.initializeApp(config);
-var leadsDb = firebase.firestore();
-
-$(function() {
+$(function () {
   var icon = "<span class='fas fa-exclamation-circle'></span> ";
-  $("#contactFrm").submit(function(e) {
+  $("#contactFrm").submit(function (e) {
     e.preventDefault();
     if (
       $("#first_name").val() == "" ||
@@ -196,34 +186,50 @@ $(function() {
       var phonePattern = /^[0-9 \+]+/;
       var emailPattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-      if (!namePattern.test($("#first_name").val()) || !namePattern.test($("#last_name").val())) {
-        $("#validation").html(icon + "First and last name must contain only alphabets.");
+      if (
+        !namePattern.test($("#first_name").val()) ||
+        !namePattern.test($("#last_name").val())
+      ) {
+        $("#validation").html(
+          icon + "First and last name must contain only alphabets."
+        );
       } else if (!emailPattern.test($("#email").val())) {
         $("#validation").html(icon + "Entered email is not valid.");
       } else if (!phonePattern.test($("#phone").val())) {
         $("#validation").html(
-          icon + "Please only use number 0-9, '+' and ' '(space). Entered phone number is not valid."
+          icon +
+            "Please only use number 0-9, '+' and ' '(space). Entered phone number is not valid."
         );
       } else {
         $("#validation").css({ color: "#5aad5a" });
         $("#validation").html(
-          '<i class="fas fa-check-circle"></i> ' + "Thank you for your enquiry. We will get back to you."
+          '<i class="fas fa-check-circle"></i> ' +
+            "Thank you for your enquiry. We will get back to you."
         );
 
         var message = $("#message").val();
 
-        leadsDb.collection("leads").add({
-          name: {
-            first: $("#first_name").val(),
-            last: $("#last_name").val()
+        const table = new Airpuck.Table(
+          {
+            name: "Contact",
+            baseID: "appXAQGbIWebGVrON",
+            apiKey: "keyLkNW8yHRPzaDht",
           },
-          email: $("#email").val(),
-          phone: $("#phone").val(),
-          host: "krcreativeagency.com",
-          message: message.replace(/<[^>]+>/g, ""),
-          timestamp: {
-            created_on: new Date()
+          (_) => {
+            //console.log(table.records());
           }
+        );
+
+        const record = new table.record();
+        record.fields["First Name"] = $("#first_name").val();
+        record.fields["Last Name"] = $("#last_name").val();
+        record.fields["Email Address"] = $("#email").val();
+        record.fields["Phone Number"] = $("#phone").val();
+        record.fields["Message"] = message.replace(/<[^>]+>/g, "");
+        record.fields["Website"] = "https://www.krcreativeagency.com";
+        console.log(record);
+        table.add(record, (_) => {
+          //console.log(table.records());
         });
 
         $("#first_name").val(null);
@@ -232,7 +238,7 @@ $(function() {
         $("#phone").val(null);
         $("#message").val(null);
 
-        setTimeout(function() {
+        setTimeout(function () {
           $("#validation").html("");
         }, 5000);
       }
