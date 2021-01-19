@@ -1,6 +1,5 @@
 var host = "www.krcreativeagency.com";
-if (host == window.location.host && window.location.protocol != "https:")
-  window.location.protocol = "https";
+if (host == window.location.host && window.location.protocol != "https:") window.location.protocol = "https";
 /*
 $.get("./resources/json/data.json", function(data) {
   var content = "";
@@ -64,10 +63,7 @@ function onScroll() {
   $("#navigation a").each(function () {
     var currentLink = $(this);
     var refElement = $(currentLink.attr("href"));
-    if (
-      refElement.position().top <= scrollPosition &&
-      refElement.position().top + refElement.height() > scrollPosition
-    ) {
+    if (refElement.position().top <= scrollPosition && refElement.position().top + refElement.height() > scrollPosition) {
       $("#navigation a.active").removeClass("active");
       $(this).addClass("active");
     } else {
@@ -186,26 +182,15 @@ $(function () {
       var phonePattern = /^[0-9 \+]+/;
       var emailPattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-      if (
-        !namePattern.test($("#first_name").val()) ||
-        !namePattern.test($("#last_name").val())
-      ) {
-        $("#validation").html(
-          icon + "First and last name must contain only alphabets."
-        );
+      if (!namePattern.test($("#first_name").val()) || !namePattern.test($("#last_name").val())) {
+        $("#validation").html(icon + "First and last name must contain only alphabets.");
       } else if (!emailPattern.test($("#email").val())) {
         $("#validation").html(icon + "Entered email is not valid.");
       } else if (!phonePattern.test($("#phone").val())) {
-        $("#validation").html(
-          icon +
-            "Please only use number 0-9, '+' and ' '(space). Entered phone number is not valid."
-        );
+        $("#validation").html(icon + "Please only use number 0-9, '+' and ' '(space). Entered phone number is not valid.");
       } else {
         $("#validation").css({ color: "#5aad5a" });
-        $("#validation").html(
-          '<i class="fas fa-check-circle"></i> ' +
-            "Thank you for your enquiry. We will get back to you."
-        );
+        $("#validation").html('<i class="fas fa-check-circle"></i> ' + "Thank you for your enquiry. We will get back to you.");
 
         var message = $("#message").val();
 
@@ -213,7 +198,7 @@ $(function () {
           {
             name: "Contact",
             baseID: "appXAQGbIWebGVrON",
-            apiKey: "keyh8NYurWjs9Wykj",
+            apiKey: "keygu7MmgjQEqrUnT",
           },
           (_) => {
             //console.log(table.records());
